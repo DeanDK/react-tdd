@@ -43422,12 +43422,18 @@ function (_Component) {
     key: "render",
     value: function render() {
       var inputText = this.state.inputText;
-      return _react.default.createElement("div", null, _react.default.createElement(_reactMaterialize.TextInput, {
+      return _react.default.createElement(_reactMaterialize.Row, null, _react.default.createElement(_reactMaterialize.TextInput, {
         value: inputText,
         onChange: this.handleTextChange,
         "data-test": 'newRestaurantName',
-        label: 'Restaurant Name'
+        label: 'Restaurant Name',
+        s: 12,
+        m: 8,
+        l: 10
       }), _react.default.createElement(_reactMaterialize.Button, {
+        s: 12,
+        m: 4,
+        l: 2,
         "data-test": 'saveNewRestaurantButton',
         onClick: this.handleSave
       }, "Save"));
@@ -43589,6 +43595,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _RestaurantListPage = _interopRequireDefault(require("./RestaurantListPage"));
 
+var _reactMaterialize = require("react-materialize");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -43623,7 +43631,12 @@ function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement(_RestaurantListPage.default, null));
+      return _react.default.createElement("div", null, _react.default.createElement(_reactMaterialize.Row, null, _react.default.createElement(_reactMaterialize.Col, {
+        s: 12,
+        m: 10,
+        l: 8,
+        offset: 'm1 l2'
+      }, _react.default.createElement(_RestaurantListPage.default, null))));
     }
   }]);
 
@@ -43632,7 +43645,7 @@ function (_React$Component) {
 
 exports.default = App;
 ;
-},{"react":"node_modules/react/index.js","./RestaurantListPage":"src/RestaurantListPage.jsx"}],"src/main.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./RestaurantListPage":"src/RestaurantListPage.jsx","react-materialize":"node_modules/react-materialize/lib/index.js"}],"src/main.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

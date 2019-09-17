@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { Button, TextInput } from 'react-materialize';
+import { 
+    Button, 
+    TextInput,
+    Row 
+} from 'react-materialize';
 
 
 export default class NewRestaurantForm extends Component {
@@ -19,21 +23,27 @@ export default class NewRestaurantForm extends Component {
     render() {
         const { inputText } = this.state;
         return(
-            <div>
+            <Row>
                 <TextInput
                     value={inputText}
                     onChange={this.handleTextChange}
                     data-test={'newRestaurantName'}
                     label={'Restaurant Name'}
+                    s={12}
+                    m={8}
+                    l={10}
                 />
 
                 <Button
+                    s={12}
+                    m={4}
+                    l={2}
                     data-test={'saveNewRestaurantButton'}
                     onClick={this.handleSave}
                 >
                     Save
                 </Button>
-            </div>
+            </Row>
         );
     };
 };
