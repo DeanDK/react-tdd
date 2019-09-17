@@ -15,12 +15,12 @@ describe('NewRestaurantForm', () => {
 
             // find the input and simulate onChange event
             wrapper
-                .find('[data-test="newRestaurantName"]')
+                .find('input[data-test="newRestaurantName"]')
                 .simulate('change', { target: { value: 'Sushi place'}});
 
             // find the save button and simulate onClick event
             wrapper
-                 .find('[data-test="saveNewRestaurantButton"]')
+                 .find('button[data-test="saveNewRestaurantButton"]')
                  .simulate('click');
 
             // expect saveHandler(onSave) to be called with 'Sushi place' argument
