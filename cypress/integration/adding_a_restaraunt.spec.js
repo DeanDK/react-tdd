@@ -3,7 +3,11 @@ describe('adding a restaraunt', () => {
         const restaurantName = 'Sushi Place';
         // visit this url
         cy.visit('http://localhost:1234')
-        
+
+        // confirm newRestaurantName is not shown
+        cy.get('[data-test="newRestaurantName"]')
+            .should('not.exist');
+            
         // click on the add button
         cy.get('[data-test="addRestaurantButton"]')
             .click();
@@ -16,6 +20,10 @@ describe('adding a restaraunt', () => {
         cy.get('[data-test="saveNewRestaurantButton"]')
             .click();
 
+        // confirm newRestaurantName is not shown
+        cy.get('[data-test="newRestaurantName"]')
+            .should('not.exist');
+    
         // check if page contains new restaraunt
         cy.contains(restaurantName); 
     });
